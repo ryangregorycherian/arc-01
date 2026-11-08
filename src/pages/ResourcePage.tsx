@@ -2,15 +2,12 @@
  * ARC-01 — The Lantern Archive
  * Maintained by CSI VIT Chennai Technical Team
  */
-import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { findResource } from '../data/resources'
 
 function ResourcePage() {
   const { slug } = useParams()
   const resource = findResource(slug)
-  const [notice, setNotice] = useState('')
-
   if (!resource) {
     return (
       <section className="missing-page">
@@ -55,16 +52,10 @@ function ResourcePage() {
           className="download-link"
           href={resource.file}
           download
-          onClick={(event) => {
-            if (resource.slug === 'safer-inputs') {
-              event.preventDefault()
-              setNotice('Copy filed in your downloads tray.')
-            }
-          }}
+          
         >
           Download {resource.title}
         </a>
-        {notice && <p className="download-notice" role="status">{notice}</p>}
       </div>
 
       <p><Link to="/#catalog">← Return to the resource index</Link></p>

@@ -87,7 +87,7 @@ function HomePage() {
                   {resource.topic} · {resource.level} · {resource.duration}
                 </p>
                 <h3>
-                  <Link to={resource.slug === 'web-foundations' ? '/resource/git-first-steps' : `/resource/${resource.slug}`}>
+                  <Link to={`/resource/${resource.slug}`}>
                     {resource.title}
                   </Link>
                 </h3>

@@ -2,10 +2,16 @@
  * ARC-01 — The Lantern Archive
  * Maintained by CSI VIT Chennai Technical Team
  */
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { topics } from '../data/resources'
 
 function SiteLayout() {
+  const location = useLocation()
+  useEffect(() => {
+    if (!location.hash) return
+    document.getElementById(location.hash.slice(1))?.scrollIntoView()
+  }, [location])
   return (
     <div className="page-background">
       <p className="utility-line">ARC-01 / PUBLIC RESOURCE DESK / BANANA EDITION</p>
@@ -24,9 +30,9 @@ function SiteLayout() {
 
         <nav className="site-nav" aria-label="Primary navigation">
           <NavLink to="/" end>Home</NavLink>
-          <Link to="/#notes">Resource index</Link>
-          <Link to="/#catalog">Field notes</Link>
-          <Link to="/#about">Resource index</Link>
+          <Link to="/#catalog">Resource index</Link>
+          <Link to="/#notes">Field notes</Link>
+          <Link to="/#about">About</Link>
         </nav>
 
         <div className="content-layout">

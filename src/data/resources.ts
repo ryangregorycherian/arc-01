@@ -52,7 +52,7 @@ export const resources: Resource[] = [
     description: 'Use observation, reduction, hypotheses, and controlled checks to debug without changing several things at once.',
     duration: '20 minutes',
     level: 'Starter',
-    file: '/resources/debugging-compas.txt',
+    file: '/resources/debugging-compass.txt',
     archiveMark: 'ARC-DBG-003',
     checksum: '61de-004b',
   },

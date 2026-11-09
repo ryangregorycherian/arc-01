@@ -52,7 +52,7 @@ function SiteLayout() {
               <ul className="link-list">
                 {topics.slice(1).map((topic) => (
                   <li key={topic}>
-                    <Link to={`/?topic=${topic === 'Safety' ? 'Safety' : topic}#catalog`}>{topic}</Link>
+                    <Link to={`/?topic=${topic}#catalog`}>{topic}</Link>
                   </li>
                 ))}
               </ul>
